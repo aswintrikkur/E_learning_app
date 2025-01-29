@@ -1,8 +1,13 @@
 import express from "express";
+import { connectDB } from "./config/db.js";
+
+
+const port = 3000;
+
+connectDB();
 
 const app = express();
 app.use(express.json())
-const port = 3000;
 
 
 app.get("/", (req, res) => {
