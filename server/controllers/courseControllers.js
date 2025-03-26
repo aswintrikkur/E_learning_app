@@ -1,5 +1,6 @@
 import { cloudinaryInstance } from "../config/cloudinaryCofig.js";
 import { Course } from "../models/courseModel.js";
+import { courseDetailsList } from "../data/couseData.js";
 
 export const getCourses = async (req, res, next) => {
     try {
@@ -14,8 +15,12 @@ export const getCourses = async (req, res, next) => {
 export const getCoursesDetails = async (req, res, next) => {
     try {
         const { courseId } = req.params;
+        
+        // const courseDetails = await Course.findOne(courseId).populate("mentor");
 
-        const courseDetails = await Course.findOne(courseId).populate("mentor");
+        const courseDetails = courseDetailsList.find((value) => value?._id === courseId); //!temporary code
+        console.log(courseDetails);
+        
 
         res.json({ data: courseDetails, message: "Course details fetched" });
     } catch (error) {

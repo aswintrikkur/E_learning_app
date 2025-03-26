@@ -26,7 +26,6 @@ export const CourseDetails = ({ course }) => {
 
                 {/* Instructor Details */}
                 <CourseInstructor instructor={course?.instructor} />
-                
             </div>
         </div>
     );

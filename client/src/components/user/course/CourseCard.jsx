@@ -30,7 +30,7 @@ export const CourseCard = ({ course }) => {
             </CardContent>
             <CardFooter className="flex justify-between items-center">
                 <Button variant="default" className="w-full">
-                    Enroll Now
+                    Know More
                 </Button>
             </CardFooter>
         </Card>
