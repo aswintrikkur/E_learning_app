@@ -3,6 +3,7 @@ import React from "react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Button } from "@/components/ui/button";
 
 export const CourseOverview = ({ overview }) => {
     return (
@@ -10,6 +11,15 @@ export const CourseOverview = ({ overview }) => {
             {/* Course Title and Description */}
             <h1 className="text-4xl font-bold">{overview?.title}</h1>
             <p className="text-muted-foreground mt-2">{overview?.description}</p>
+
+            <div className="w-full flex gap-3">
+                <Button variant="outline" className="w-6/12 my-6 md:hidden">
+                    Add to Cart
+                </Button>
+                <Button variant="destructive" className="w-6/12 my-6 md:hidden">
+                    Enroll Now
+                </Button>
+            </div>
 
             {/* Course Details */}
             <div className="mt-4 text-sm font-medium text-gray-800 space-y-2">
