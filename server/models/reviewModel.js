@@ -1,31 +1,29 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose from "mongoose";
 
-const reviewSchema = new Schema({
-    userId: {
-        type: Schema.Types.ObjectId,
-        ref: "User",
-        required: true,
+const reviewSchema = new mongoose.Schema(
+  {
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User", // Reference to the user who wrote the review
+      required: true,
     },
-    courseId: {
-        type: Schema.Types.ObjectId,
-        ref: "Course",
-        required: true,
+    course: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Course", // Reference to the course being reviewed
+      required: true,
     },
     rating: {
-        type: Number,
-        required: true,
-        min: 1,
-        max: 5,
+      type: Number,
+      required: true,
+      min: 1,
+      max: 5,
     },
     comment: {
-        type: String,
-        trim: true,
-        maxlength: 500,
+      type: String,
+      required: true,
     },
-    createdAt: {
-        type: Date,
-        default: Date.now,
-    },
-});
+  },
+  { timestamps: true } // Automatically adds createdAt and updatedAt timestamps
+);
 
 export const Review = mongoose.model("Review", reviewSchema);

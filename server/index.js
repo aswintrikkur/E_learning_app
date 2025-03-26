@@ -4,22 +4,22 @@ import { connectDB } from "./config/db.js";
 import { apiRouter } from "./routes/index.js";
 import cors from "cors";
 
-const port = 3000;
+import "./config/cronJobs.js"; // Import to start automatic cleanup
 
+
+const port = 3000;
 const app = express();
+
+connectDB(); //Connect DB
+
+// app-level middlewares
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({ origin: process.env.CLIENT_DOMAIN, credentials: true }));
 
-connectDB();
 
-app.get("/", (req, res) => {
-    res.send("Hello World!");
-});
-
-app.get("/test", (req, res) => {
-    res.send("test");
-});
+app.get("/", (req, res) => res.send("Hello World!"));
+app.get("/test", (req, res) => res.send("test"));
 
 app.use("/api", apiRouter);
 

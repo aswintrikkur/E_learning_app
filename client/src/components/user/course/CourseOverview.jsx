@@ -10,7 +10,7 @@ export const CourseOverview = ({ overview }) => {
         <Card className="bg-card p-6 rounded-xl shadow-md">
             {/* Course Title and Description */}
             <h1 className="text-4xl font-bold">{overview?.title}</h1>
-            <p className="text-muted-foreground mt-2">{overview?.description}</p>
+            <p className="text-muted-foreground  mt-6 mb-4">{overview?.description}</p>
 
             <div className="w-full flex gap-3">
                 <Button variant="outline" className="w-6/12 my-6 md:hidden">
@@ -22,7 +22,7 @@ export const CourseOverview = ({ overview }) => {
             </div>
 
             {/* Course Details */}
-            <div className="mt-4 text-sm font-medium text-gray-800 space-y-2">
+            <div className="mt-4 text-sm font-medium  space-y-2">
                 <p>
                     <strong>Duration:</strong> {overview?.duration}
                 </p>

@@ -1,5 +1,7 @@
-import { Cart } from "../models/cartModel.js";
 import { Course } from "../models/courseModel.js";
+import cron from "node-cron";
+// import {Cart} from "../models/cartModel.js";
+import { Cart } from "../models/cartModel.js";
 
 export const getCart = async (req, res) => {
     try {
@@ -56,7 +58,6 @@ export const addCourseToCart = async (req, res) => {
     }
 };
 
-
 export const removeCourseFromCart = async (req, res) => {
     try {
         const userId = req.user.id;
@@ -82,3 +83,36 @@ export const removeCourseFromCart = async (req, res) => {
         res.status(500).json({ message: "Internal server error", error });
     }
 };
+
+// Function to delete carts that are inactive for more than 24 hours
+const deleteOldCarts = async () => {
+    const twentyFourHoursAgo = new Date();
+    twentyFourHoursAgo.setHours(twentyFourHoursAgo.getHours() - 24);
+
+    try {
+        // Delete only carts where status is NOT "active" and updatedAt is older than 24 hours
+        const result = await Cart.deleteMany({
+            status: { $ne: "active" }, // Ensures only inactive carts are deleted
+            updatedAt: { $lt: twentyFourHoursAgo },
+        });
+
+        console.log(`Deleted ${result.deletedCount} inactive carts.`);
+    } catch (error) {
+        console.error("Error deleting old carts:", error);
+    }
+};
+
+// Schedule the cron job to run every 24 hours at midnight UTC
+cron.schedule(
+    "0 0 * * *",
+    () => {
+        console.log("Running cart cleanup job...");
+        deleteOldCarts();
+    },
+    {
+        scheduled: true,
+        timezone: "UTC",
+    }
+);
+
+export default deleteOldCarts;

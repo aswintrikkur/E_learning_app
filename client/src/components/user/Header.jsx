@@ -3,6 +3,7 @@ import { Button } from "../ui/button";
 import { Link, useNavigate } from "react-router-dom";
 import { CallToActionButton } from "../shared/Buttons";
 import { Menu, X } from "lucide-react";
+import { DarkMode } from "../shared/DarkMode";
 
 export const Header = () => {
     const navigate = useNavigate();
@@ -39,6 +40,7 @@ export const Header = () => {
 
                 {/* Desktop Buttons */}
                 <div className="hidden md:flex gap-5">
+                    <DarkMode />
                     <Button variant="outline" size="lg">
                         Log-in
                     </Button>

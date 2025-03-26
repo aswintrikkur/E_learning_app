@@ -19,7 +19,6 @@ export const getCoursesDetails = async (req, res, next) => {
         // const courseDetails = await Course.findOne(courseId).populate("mentor");
 
         const courseDetails = courseDetailsList.find((value) => value?._id === courseId); //!temporary code
-        console.log(courseDetails);
         
 
         res.json({ data: courseDetails, message: "Course details fetched" });
