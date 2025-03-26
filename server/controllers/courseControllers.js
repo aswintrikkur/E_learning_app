@@ -13,35 +13,36 @@ export const getCourses = async (req, res, next) => {
 
 export const getCoursesDetails = async (req, res, next) => {
     try {
-        const courseList = await Course.find().populate("mentor");
+        const { courseId } = req.params;
 
-        res.json({ data: courseList, message: "courseList fetched" });
+        const courseDetails = await Course.findOne(courseId).populate("mentor");
+
+        res.json({ data: courseDetails, message: "Course details fetched" });
     } catch (error) {
         return res.status(error.statusCode || 500).json({ message: error.message || "Internal server error" });
     }
 };
 
-
 export const createCourse = async (req, res, next) => {
     try {
         const { title, description, price, duration, mentor } = req.body;
-        let cloudinaryResponse
+        let cloudinaryResponse;
 
         if (!title || !description || !price || !duration) {
             return res.status(400).json({ message: "all fileds required" });
         }
 
-        const mentorId = req.user.id;
+        // const mentorId = req.user.id;
 
         console.log("image===", req.file);
 
-        if(req.file){
+        if (req.file) {
             cloudinaryResponse = await cloudinaryInstance.uploader.upload(req.file.path);
         }
 
         console.log("cldRes====", cloudinaryResponse);
 
-        const courseData = new Course({ title, description, price, duration, image: cloudinaryResponse.url, mentor: mentorId });
+        const courseData = new Course({ title, description, price, duration, image: cloudinaryResponse.url });
         await courseData.save();
 
         res.json({ data: courseData, message: "course created successfully" });

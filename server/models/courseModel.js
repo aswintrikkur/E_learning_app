@@ -13,7 +13,7 @@ const courseSchema = new mongoose.Schema(
             type: String,
             required: true,
             minLength: 20,
-            maxLength: 300,
+            maxLength: 500,
         },
         price: {
             type: Number,

@@ -2,16 +2,13 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 
 export const UserProtectedRoutes = () => {
-  return <Outlet/>
+    return <Outlet />;
 };
-
 
 export const MentorProtectedRoutes = () => {
-  return <Outlet/>
+    return <Outlet />;
 };
 
-
-
 export const AdminProtectedRoutes = () => {
-  return <Outlet/>
+    return <Outlet />;
 };

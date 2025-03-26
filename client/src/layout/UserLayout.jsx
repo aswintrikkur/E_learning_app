@@ -5,12 +5,12 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 
 export const UserLayout = () => {
-    const isUserAuth = true;
+    const isUserAuth = false;
 
     return (
         <>
             {isUserAuth ? <UserHeader /> : <Header />}
-            <div className="min-h-96">
+            <div className="container mx-auto min-h-96 px-6 md:px-10 lg:px-20 pt-6 pb-10">
                 <Outlet />
             </div>
             <Footer />

@@ -10,7 +10,7 @@ const router = e.Router();
 router.use("/user", userRouter);
 router.use("/mentor", mentorRouter);
 // router.use("/admin");
-router.use("/courses", courseRouter);
+router.use("/course", courseRouter);
 router.use("/cart", cartRouter);
 router.use("/review", reviewRouter);
 

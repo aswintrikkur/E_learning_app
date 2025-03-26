@@ -1,13 +1,15 @@
 import React from "react";
 import { Button } from "../ui/button";
 import { Link } from "react-router-dom";
-import { User2Icon,   ShoppingCartIcon,  HeartIcon } from "lucide-react";
+import { User2Icon, ShoppingCartIcon, HeartIcon } from "lucide-react";
 
 export const UserHeader = () => {
     return (
         <div className="flex w-full justify-between items-center px-20 py-10 bg-background shadow-lg">
             <div>
-                <h1 className="text-3xl font-bold">Logo</h1>
+                <h1 className="text-3xl font-bold">
+                    <Link to={"/"}> Logo</Link>
+                </h1>
             </div>
             <nav className="">
                 <ul className="flex  gap-10">
