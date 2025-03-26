@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, buttonVariants } from "../ui/button";
 import { Link } from "react-router-dom";
+import { CallToActionButton } from "../shared/Buttons";
 // import { Link } from "lucide-react";
 
 export const Header = () => {
@@ -27,7 +28,7 @@ export const Header = () => {
             </nav>
             <div className="flex gap-5">
                 <Button variant="outline" size="lg">Log-in</Button>
-                <Button variant="destructive" size="lg">Join us</Button>
+                <CallToActionButton value="Join us" />
             </div>
         </div>
     );

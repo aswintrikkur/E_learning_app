@@ -1,5 +1,5 @@
 import { SearchBar } from "@/components/shared/SearchBar";
-import { CourseCard, SkeletonCourseCard } from "@/components/user/CourseCard";
+import { CourseCard, SkeletonCourseCard } from "@/components/user/course/CourseCard";
 import { useFetch } from "@/hooks/useFetch.js";
 // import { useFetch } from "@/hooks/useFetch";
 import React, { useState } from "react";
@@ -12,7 +12,7 @@ export const CoursesPage = () => {
     const filteredCourses = courseList?.filter((course) => course.title.toLowerCase().includes(searchTerm.toLowerCase()));
 
     //render course cards
-    const renderCourses = () => filteredCourses?.map((course, index) => <CourseCard key={course?._id} course={course} />);
+    const renderCourses = () => filteredCourses?.map((course, index) => <CourseCard  key={course?._id} course={course} />);
 
     //render skeletons
     const renderSkeletons = () => Array.from({ length: 4 }).map((_, index) => <SkeletonCourseCard key={index} />);

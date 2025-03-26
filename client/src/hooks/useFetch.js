@@ -1,14 +1,20 @@
 import { axiosInstance } from "@/config/axios";
+import axios from "axios";
 import { useEffect, useState } from "react";
 
-export const useFetch = (url) => {
+export const useFetch = (url, noBaseUrl = false) => {
     const [data, setData] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
 
     const fetchData = async () => {
         try {
-            const response = await axiosInstance({ method: "GET", url });
+            let response = {};
+            if (noBaseUrl) {
+                response.data = await axios(url);
+            } else {
+                response = await axiosInstance({ method: "GET", url });
+            }
 
             setTimeout(() => {
                 setData(response?.data?.data);

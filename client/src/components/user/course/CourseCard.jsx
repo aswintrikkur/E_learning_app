@@ -3,10 +3,18 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+
+//*this component contain courseCards and courseCardSkeletons
 
 export const CourseCard = ({ course }) => {
+    const navigate = useNavigate();
+
     return (
-        <Card className="w-full max-w-sm border border-gray-200 shadow-lg rounded-lg">
+        <Card
+            className="w-full max-w-sm border border-gray-200 shadow-lg rounded-lg"
+            onClick={() => navigate(`/courseDetails/${course?._id}`)}
+        >
             <img src={course.image} alt={course.title} className="w-full h-48 object-cover rounded-t-lg" />
             <CardHeader>
                 <CardTitle className="text-lg font-bold">{course.title}</CardTitle>

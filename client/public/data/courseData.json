@@ -1,0 +1,117 @@
+{
+  "overview": {
+    "title": "Full-Stack Web Development",
+    "description": "This MERN Stack Development Course is designed to equip students with the skills to build full-stack web applications using MongoDB, Express.js, React.js, and Node.js. The course covers front-end and back-end development, database management, RESTful APIs, authentication, and deployment strategies. By the end of this course, students will be able to create scalable, high-performance web applications.",
+    "duration": "12 Weeks",
+    "level": "Beginner to Advanced",
+    "language": "English",
+    "price": 14000,
+    "tags": [
+      "JavaScript",
+      "React",
+      "Node.js",
+      "MongoDB"
+    ],
+    "image": "http://res.cloudinary.com/dxsbxqovy/image/upload/v1742970547/wlttsz607hotnayacaml.png",
+    "imageGroup": [
+      "https://jaro-website.s3.ap-south-1.amazonaws.com/2024/03/Features-of-Mern-stack-development-services-You-Should-Know-768x397-1.png",
+      "https://miro.medium.com/v2/resize:fit:1200/1*5PxGgx_aOWpTkul_D3nnbw.png",
+      "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREa-NBP1vYL0TGVgvcW04pWfiKpY-WcawFcw&s"
+    ],
+    "demoVideo": "https://www.youtube.com/embed/_O6cy4_4uvw?si=pA-A1n3iGNJcv0uV"
+  },
+  "instructor": {
+    "name": "John Doe",
+    "image": "https://randomuser.me/api/portraits/men/45.jpg",
+    "bio": "Senior Software Engineer with 10+ years of experience in Full-Stack Development. Passionate about teaching and mentoring aspiring developers.",
+    "expertise": [
+      "JavaScript",
+      "React",
+      "Node.js",
+      "MongoDB",
+      "Express.js",
+      "GraphQL"
+    ],
+    "experience": 10,
+    "socials": [
+      {
+        "name": "LinkedIn",
+        "url": "https://linkedin.com/in/johndoe",
+        "icon": "FaLinkedin"
+      },
+      {
+        "name": "Twitter",
+        "url": "https://twitter.com/johndoe",
+        "icon": "FaTwitterSquare"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://github.com/johndoe",
+        "icon": "FaGithubSquare"
+      }
+    ]
+  },
+  "content": [
+    {
+      "title": "Introduction to Web Development",
+      "lessons": [
+        "What is Web Development?",
+        "Setting Up Your Environment",
+        "HTML & CSS Basics"
+      ]
+    },
+    {
+      "title": "JavaScript Fundamentals",
+      "lessons": [
+        "Variables & Data Types",
+        "Functions & Scope",
+        "DOM Manipulation"
+      ]
+    },
+    {
+      "title": "Frontend with React",
+      "lessons": [
+        "React Components",
+        "State & Props",
+        "React Hooks"
+      ]
+    },
+    {
+      "title": "Backend with Node.js & Express",
+      "lessons": [
+        "Introduction to Node.js",
+        "Building REST APIs",
+        "Authentication & JWT"
+      ]
+    },
+    {
+      "title": "Database with MongoDB",
+      "lessons": [
+        "NoSQL vs SQL",
+        "CRUD Operations",
+        "Mongoose & Models"
+      ]
+    },
+    {
+      "title": "Final Project & Deployment",
+      "lessons": [
+        "Project Structure",
+        "Hosting with Vercel",
+        "Connecting Frontend & Backend"
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "name": "Alice Smith",
+      "rating": 5,
+      "comment": "This course was amazing! The hands-on projects helped me land my first developer job."
+    },
+    {
+      "name": "Michael Johnson",
+      "rating": 4,
+      "comment": "Great course, but I wish there were more advanced backend topics."
+    }
+  ]
+}
